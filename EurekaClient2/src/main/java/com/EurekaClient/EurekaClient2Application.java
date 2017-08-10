@@ -16,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableEurekaClient
 //@RestController
 @ComponentScan(basePackages = "com.CloudEureka.controller")
-public class EurekaClientApplication {
+public class EurekaClient2Application {
 	
 //	@Autowired
 //    private DiscoveryClient client;
@@ -48,7 +48,7 @@ public class EurekaClientApplication {
 	
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaClientApplication.class, args);
+        SpringApplication.run(EurekaClient2Application.class, args);
     }
 
 }

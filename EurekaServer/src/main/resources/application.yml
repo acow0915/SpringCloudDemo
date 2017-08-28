@@ -2,5 +2,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:${server.port}/eureka/
+    healthcheck:
+      enabled: true  
   instance:
-     preferIpAddress: true    
+     preferIpAddress: true 
+     statusPageUrl: https://${eureka.hostname}/info
+     healthCheckUrl: https://${eureka.hostname}/health
+     homePageUrl: https://${eureka.hostname}/

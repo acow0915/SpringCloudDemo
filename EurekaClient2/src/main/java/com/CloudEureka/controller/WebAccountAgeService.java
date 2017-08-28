@@ -5,9 +5,10 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @Service
 public class WebAccountAgeService {
@@ -33,7 +34,19 @@ public class WebAccountAgeService {
                serviceUrl : "http://" + serviceUrl;
     }
 
+    @HystrixCommand(fallbackMethod="getByAccountFallBack")
     public Integer getByAccount(String account) {
-        return map.get(account);
+    	
+    	double randomNum = Math.random() * 100d;
+    	
+    	if(randomNum > 50d){
+    		throw new RuntimeException("故意出錯");
+    	} else {
+    		return map.get(account);
+    	}
+    }
+    
+    public Integer getByAccountFallBack(String account){
+    	return -1;
     }
 }

@@ -45,7 +45,7 @@ public class ClientService {
     	map.put("account", account);
     	
     	ResponseEntity<String> response = restTemplate.postForEntity(clientServiceUrl
-                + "/clent1/testAddress", map, String.class, map);
+                + "/client1/testAddress", map, String.class, map);
     	
     	String name = response.getBody();
     	

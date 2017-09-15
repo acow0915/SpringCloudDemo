@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>EurekaClient</groupId>
-	<artifactId>EurekaClient</artifactId>
+	<artifactId>EurekaZuul</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>EurekaClient</name>
+	<name>EurekaZuul</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -27,39 +27,30 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- 宣告式 httpclient -->
-		<dependency>
-	        <groupId>org.springframework.cloud</groupId>
-	        <artifactId>spring-cloud-starter-feign</artifactId>
-	    </dependency>
-
+		
+		<!-- 進行註冊到 erueka -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
 		
-		<!-- 增加熔斷器依賴 -->
+		<!-- zuul jar -->
 		<dependency>
 		    <groupId>org.springframework.cloud</groupId>
-		    <artifactId>spring-cloud-starter-hystrix</artifactId>
+		    <artifactId>spring-cloud-starter-zuul</artifactId>
 		</dependency>
-		
-		<!-- mq -->
-		<dependency>
-	        <groupId>org.springframework.boot</groupId>
-	        <artifactId>spring-boot-starter-amqp</artifactId>
-	    </dependency>
 	</dependencies>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Brixton.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
+	
+	<dependencyManagement>  
+	    <dependencies>
+	        <dependency>
+	        <groupId>org.springframework.cloud</groupId>
+	        <artifactId>spring-cloud-dependencies</artifactId>
+	        <version>Brixton.RELEASE</version>
+	        <type>pom</type>
+	        <scope>import</scope>
+	    </dependency>
+	    </dependencies>
 	</dependencyManagement>
+
 </project>

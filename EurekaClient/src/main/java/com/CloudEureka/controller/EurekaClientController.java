@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/clent1")
+@RequestMapping(value = "/client1")
 public class EurekaClientController {
 
 	/**使用http client 的請求方式*/

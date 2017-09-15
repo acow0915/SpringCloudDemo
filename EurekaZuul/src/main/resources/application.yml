@@ -1,0 +1,25 @@
+spring:
+  application:
+     name: zuul-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+  healthcheck:
+      enabled: true     
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /zuulApi
+  #Uncomment to disable auto-registering all services read from Eureka
+  #ignoredServices: '*'
+  routes:
+    test:
+      path: /redirect/**
+      url: http://www.google.com
+    customer-by-address:
+      path: /customer-by-address/**
+      url: http://localhost:9098
+    customer-by-service:
+      path: /clientApi1/**
+      serviceId: client-service 
+      #stripPrefix: false     

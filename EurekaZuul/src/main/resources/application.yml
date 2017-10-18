@@ -20,6 +20,7 @@ zuul:
       path: /customer-by-address/**
       url: http://localhost:9098
     customer-by-service:
+      # demo url http://localhost:8888/zuulApi/clientApi1/client1/getUserData/Tim
       path: /clientApi1/**
       serviceId: client-service 
       #stripPrefix: false     

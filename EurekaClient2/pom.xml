@@ -38,6 +38,12 @@
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-starter-hystrix</artifactId>
 		</dependency>
+		
+		<!-- hystrix 節點偵測 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>

@@ -1,0 +1,9 @@
+spring:
+  application:
+     name: hystrix-dashboard-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://EurekaServer:8001/eureka/
+  healthcheck:
+      enabled: true  

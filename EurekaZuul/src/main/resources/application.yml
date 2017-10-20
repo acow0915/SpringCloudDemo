@@ -4,7 +4,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8001/eureka/
+      defaultZone: http://EurekaServer:8001/eureka/
   healthcheck:
       enabled: true     
 zuul:

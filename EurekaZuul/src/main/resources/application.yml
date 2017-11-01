@@ -1,10 +1,15 @@
 spring:
   application:
      name: zuul-service
+logging:  
+  file: ./logs/${spring.application.name}.log       
+server:
+  port: 8888
+  context-path: /     
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://EurekaServer:8001/eureka/
+      defaultZone: http://localhost:8001/eureka/
   healthcheck:
       enabled: true     
 zuul:

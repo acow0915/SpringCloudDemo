@@ -1,0 +1,14 @@
+spring:
+  application:
+     name: config-server-service
+  cloud:
+     config:      
+        server:
+          native:
+            #search-locations: file:///${path}/config-repo    
+            search-locations: classpath:/config  
+logging:  
+  file: ./logs/${spring.application.name}.log  
+server:
+  port: 8889
+  context-path: /              

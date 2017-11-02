@@ -28,11 +28,16 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- 進行註冊到 erueka -->
 		<dependency>
+	        <groupId>org.springframework.cloud</groupId>
+	        <artifactId>spring-cloud-config-server</artifactId>
+	    </dependency>
+		
+		<!-- 進行註冊到 erueka -->
+		<!-- <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
-		</dependency>
+		</dependency> -->
   </dependencies>
   
   <dependencyManagement>  

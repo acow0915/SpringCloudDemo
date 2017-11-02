@@ -1,14 +1,17 @@
+server:
+  port: 8889
+  context-path: /
 spring:
   application:
      name: config-server-service
+  profiles:
+     active: native 
   cloud:
      config:      
         server:
           native:
             #search-locations: file:///${path}/config-repo    
-            search-locations: classpath:/config  
+            search-locations: classpath:/config
+        uri : http://localhost:8889  
 logging:  
-  file: ./logs/${spring.application.name}.log  
-server:
-  port: 8889
-  context-path: /              
+  file: ./logs/${spring.application.name}.log                
